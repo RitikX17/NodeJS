@@ -71,7 +71,7 @@ app.delete("/", (req, res) => {
     }
     users[0].kidneys = newKidneys;
     res.json({
-        msg:"All unhealthy kidneys removed"
+        msg:"All unhealthy kidneys removed Succesfully"
     });
 });
 
