@@ -76,4 +76,3 @@ app.delete("/", (req, res) => {
 });
 
 app.listen(3001);
-console.log(users[0]);
