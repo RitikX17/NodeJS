@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script>
-      window.onload = () => {
-        const heading = document.createElement("h1");
-        heading.innerText = "Hello I am innerText";
-        const headingText = document.createTextNode("My Heading is this");
-        heading.appendChild(headingText);
-        
-        document.body.appendChild(heading);
-      };
-    </script>
+    <title>My Sample Page</title>
   </head>
   <body>
+    <h2 title="firsthead">Hello my name is heading 2</h2>
+    <p title="firstpara" id="para">Hi my name is paragraph</p>
+    <script>
+      const heading = document.createElement("h1");
+      heading.innerText = "Hello I am innerText";
+      const headingText = document.createTextNode("My Heading is this");
+      heading.appendChild(headingText);
+      document.body.appendChild(heading);
+      document.getElementsByTagName("h2").innerHtml =
+        "Hello my name is not heading 2";
+      document.getElementById("para").setAttribute("title", "1stpara");
+      document.getElementById("para").style.backgroundColor = "cyan";
+    </script>
   </body>
 </html>
