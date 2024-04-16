@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="First Number" id ="first"><br>
+    <input type="text" placeholder="Second Number" id="second"><br>
+    <button onclick="sum()">Calculate sum</button>
+    <div id="finalSum">answer will appear here!!</div>
+    <script>
+        const sum = () =>{
+            const a = document.getElementById("first").value;
+            const b = document.getElementById("second").value;
+            fetch("http://localhost:8080/sum?a="+a+"&b="+b).then(res=>res.text()).then(data=>document.getElementById("finalSum").innerHTML = data);
+            
+            
+        }
+    </script>
+</body>
+</html>

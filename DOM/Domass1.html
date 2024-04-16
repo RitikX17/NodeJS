@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Principal Amount" id ="principal"><br>
+    <input type="text" placeholder="Interest rate per anum" id="rate"><br>
+    <input type="text" placeholder="Time in Years" id="time"><br>
+    <button onclick="calculateTotal()">Calculate sum</button>
+    <div id="finalSum">answer will appear here!!</div>
+    <script>
+        const calculateTotal = () =>{
+            const a = document.getElementById("principal").value;
+            const b = document.getElementById("rate").value;
+            const c = document.getElementById("time").value;
+            fetch("http://localhost:8080/interest?principal="+a+"&rate="+b+"&time="+c).then(res=>res.json()).then(data=>document.getElementById("finalSum").innerHTML = JSON.stringify(data));
+            
+            
+        }
+    </script>
+</body>
+</html>
