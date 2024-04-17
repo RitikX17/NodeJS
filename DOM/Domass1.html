@@ -16,9 +16,9 @@
             const a = document.getElementById("principal").value;
             const b = document.getElementById("rate").value;
             const c = document.getElementById("time").value;
-            fetch("http://localhost:8080/interest?principal="+a+"&rate="+b+"&time="+c).then(res=>res.json()).then(data=>document.getElementById("finalSum").innerHTML = JSON.stringify(data));
-            
-            
+            fetch("http://localhost:8080/interest?principal="+a+"&rate="+b+"&time="+c)
+            .then(res=>res.json())
+            .then(data=>document.getElementById("finalSum").innerHTML = JSON.stringify(data));
         }
     </script>
 </body>
