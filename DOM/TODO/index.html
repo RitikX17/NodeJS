@@ -38,21 +38,11 @@
                 parent.appendChild(child);
             }
         }
-        updateDomAccToState([{
-            title: "go to gym",
-            description: "you need to go daily",
-            id: 1
-        },
-        {
-            title: "go to gym",
-            description: "you need to go daily",
-            id: 1
-        },
-        {
-            title: "go to gym",
-            description: "you need to go daily",
-            id: 1
-        }]);
+        window.setInterval(async ()=>{
+            const res = await fetch("http://localhost:8000/todos");
+            const json = await res.json();
+            updateDomAccToState(json.todos);
+        },5000)
     </script>
 </body>
 </html>
